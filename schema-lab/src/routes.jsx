@@ -3,8 +3,7 @@ import {
   Navigate,
   Outlet,
   Route,
-  HashRouter,
-  Routes,
+  Routes, BrowserRouter,
 } from "react-router-dom";
 import Home from "./Home";
 import Auth from "./auth";
@@ -41,7 +40,7 @@ const ProtectedRoutes = () => {
 
 const AppRouter = () => {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Routes>
         <Route element={<Base />}>
           <Route path="/" element={<Home />} />
@@ -80,7 +79,7 @@ const AppRouter = () => {
           <Route path="/*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 };
 

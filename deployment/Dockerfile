@@ -28,6 +28,8 @@ RUN npm run build
 # Use a lightweight web server to serve the build files
 FROM nginx:alpine
 
+COPY deployment/resources/nginx.conf /etc/nginx/conf.d/default.conf
+
 COPY deployment/entrypoint.sh /
 
 RUN chmod u+x /entrypoint.sh
@@ -39,4 +41,4 @@ COPY --from=build /schema-lab/build /usr/share/nginx/html
 EXPOSE 80
 
 # Start NGINX server
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["./entrypoint.sh"]
