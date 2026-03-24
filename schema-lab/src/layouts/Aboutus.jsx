@@ -11,6 +11,12 @@ import { faXTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 // Placeholder images for members
 import placeholderImage from '../img/about_us/about-us-landing-page-template.png';
+import thanasis from "../img/about_us/thanasis.png";
+import eleni from "../img/about_us/eleni.png";
+import panagiotis from "../img/about_us/panagiotis.jpeg";
+import katerina from "../img/about_us/katerina.jpg";
+import kostis from "../img/about_us/kostis.png";
+import georgia from "../img/about_us/georgia.jpg";
 
 const TeamMemberCard = ({ name, role, image, twitter, linkedin, email }) => {
     return (
@@ -35,35 +41,48 @@ const TeamMemberCard = ({ name, role, image, twitter, linkedin, email }) => {
     );
 };
 
-const AboutusTemplate = () => {
+const Aboutus = () => {
     const teamMembers = [
-        { name: 'Name Placeholder', role: 'Role Placeholder', image: placeholderImage, twitter: '', linkedin: '', email: '' },
-        { name: 'Name Placeholder', role: 'Role Placeholder', image: placeholderImage, twitter: '', linkedin: '', email: '' },
-        { name: 'Name Placeholder', role: 'Role Placeholder', image: placeholderImage, twitter: '', linkedin: '', email: '' },
+        { name: 'Thanasis Vergoulis', role: 'Team Leader', image: thanasis, twitter: 'https://twitter.com/vergoulis?lang=el', linkedin: 'https://www.linkedin.com/in/thanasis-vergoulis-863b8152/?originalSubdomain=gr', email: 'vergoulis@athenarc.gr' },
+        { name: 'Eleni Adamidi', role: 'Project Manager', image: eleni, twitter: '', linkedin: 'https://www.linkedin.com/in/eleni-adamidi-74575952/?originalSubdomain=gr', email: 'eleni.adamidi@athenarc.gr' },
+        { name: 'Panagiotis Deligiannis', role: 'Full-stack Developer', image: panagiotis, twitter: '', linkedin: 'https://www.linkedin.com/in/panagiotis-deligiannis-8b2885203/', email: 'deligianp@athenarc.gr' },
     ];
 
     const formerteamMembers = [
-        { name: 'Name Placeholder', role: 'Role Placeholder', image: placeholderImage, twitter: '', linkedin: '', email: '' },
-        { name: 'Name Placeholder', role: 'Role Placeholder', image: placeholderImage, twitter: '', linkedin: '', email: '' },
+        { name: 'Georgia Eirini Dimitriou', role: 'Full-stack Developer', image: georgia, twitter: '', linkedin: 'https://www.linkedin.com/in/dimitriou-georgia/', email: 'georgia.dimitriou@athenarc.gr' },
+        { name: 'Katerina Mastoraki', role: 'Full-stack Developer', image: katerina, twitter: '', linkedin: 'https://www.linkedin.com/in/katerina-mastoraki-a71570246/', email: 'kmastoraki@athenarc.gr' },
+        { name: 'Kostis Zagannas', role: 'DevOps', image: kostis, twitter: '', linkedin: 'https://www.linkedin.com/in/kostis-zagganas/', email: 'zagganas@athenarc.gr' },
     ];
 
     return (
         <Container className="mt-5">
-            <h1 className="display-6 text-center mb-2">Publication Placeholder</h1>
+            <h1 className="display-6 text-center mb-2">Publications</h1>
             <Card className="text-center mb-5 shadow-sm border-light rounded">
                 <Card.Body>
                     <Card.Text className="text-muted">
-                        Author Name 1, Author Name 2, Author Name 3, and others. Year.
-                        <b> Publication Title Placeholder. </b>
-                        In Conference Name Placeholder.
-                        Publishing Organization Placeholder, Location Placeholder, Page Numbers Placeholder.
-                        <a href="#" className="d-block text-dark mt-2">
-                            Link Placeholder
+                        E. Adamidi, P. Deligiannis, N. Foutris, and T. Vergoulis. 2025.
+                        <b>A Virtual Laboratory for Managing Computational Experiments.</b>
+                        In Proceedings of the 37th International Conference on Scalable Scientific Data Management
+                        (SSDBM '25). Association for Computing Machinery, New York, NY, USA, Article 14, 1–6.
+                        <a href="https://doi.org/10.1145/3733723.3733743" className="d-block mt-2">
+                            https://doi.org/10.1145/3733723.3733743
                         </a>
                     </Card.Text>
                 </Card.Body>
             </Card>
-
+            <Card className="text-center mb-5 shadow-sm border-light rounded">
+                <Card.Body>
+                    <Card.Text className="text-muted">
+                        T. Vergoulis, K. Zagganas, L. Kavouras, M. Reczko, S. Sartzetakis, and T. Dalamagas. 2021.
+                        <b> SCHeMa: Scheduling Scientific Containers on a Cluster of Heterogeneous Machines.</b>
+                        In 33rd International Conference on Scientific and Statistical Database Management (SSDBM 2021).
+                        Association for Computing Machinery, New York, NY, USA, 243–47.
+                        <a href="https://doi.org/10.1145/3468791.3468813" className="d-block mt-2">
+                            https://doi.org/10.1145/3468791.3468813
+                        </a>
+                    </Card.Text>
+                </Card.Body>
+            </Card>
             <h1 className="display-6 text-center mb-4">About Us</h1>
             <Row className="justify-content-center">
                 {teamMembers.map((member, index) => (
@@ -99,21 +118,21 @@ const AboutusTemplate = () => {
             <Row className="justify-content-center mt-4">
                 <Col md={6} className="text-center">
                     <h2 className="display-6">Contact Us Placeholder</h2>
-                    <p className="mb-2"> <FontAwesomeIcon icon={faEnvelope} /><b> Email: </b>
-                        <a href="mailto:email-placeholder@domain.com" className="text-decoration-none">
-                            email-placeholder@domain.com
+                    <p className="mb-2"><FontAwesomeIcon icon={faEnvelope}/><b> Email: </b>
+                        <a href="mailto:schema-services@athenarc.gr" className="text-decoration-none">
+                            schema-services@athenarc.gr
                         </a>
                     </p>
-                    <p className="mb-4"><FontAwesomeIcon icon={faLocationPin} />
-                        <b> Address: </b> Address Placeholder, City Placeholder, Zip Code Placeholder, Country Placeholder</p>
+                    <p className="mb-4"><FontAwesomeIcon icon={faLocationPin}/>
+                        <b> Address: </b> Athena RC, Artemidos 6 & Epidavrou, Maroussi 15125, Greece</p>
                     <div className="embed-responsive embed-responsive-16by9 mb-5">
                         <iframe
                             className="embed-responsive-item"
-                            src="https://www.google.com/maps/embed?pb=Placeholders"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3142.4363630156276!2d23.80087030098673!3d38.03691757961298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a198deffffffff%3A0x1ce27455f146f478!2zzpHOmM6Xzp3OkSDOlc6hzpXOpc6dzpfOpM6ZzprOnyDOms6Vzp3OpM6hzp8gzprOkc6Zzp3On86kzp_OnM6ZzpHOow!5e0!3m2!1sel!2sgr!4v1681158069899!5m2!1sel!2sgr"
                             allowFullScreen
                             title="Google Maps Placeholder"
                             referrerPolicy="no-referrer-when-downgrade"
-                            style={{ border: 0, width: '100%', height: '400px' }}
+                            style={{border: 0, width: '100%', height: '450px'}}
                         ></iframe>
                     </div>
                 </Col>
@@ -122,4 +141,4 @@ const AboutusTemplate = () => {
     );
 };
 
-export default AboutusTemplate;
+export default Aboutus;
