@@ -1,17 +1,11 @@
-import React, { useContext } from "react";
-import {
-  Navigate,
-  Outlet,
-  Route,
-  Routes, BrowserRouter,
-} from "react-router-dom";
+import React, {useContext} from "react";
+import {BrowserRouter, Navigate, Outlet, Route, Routes,} from "react-router-dom";
 import Home from "./Home";
 import Auth from "./auth";
 import Logout from "./auth/Logout";
 import Dashboard from "./dashboard";
-import FilesDashboard from "./files/Dashboard";
 import Base from "./layouts/Base";
-import { UserDetailsContext } from "./utils/components/auth/AuthProvider";
+import {UserDetailsContext} from "./utils/components/auth/AuthProvider";
 import UserPreferencesView from "./client/ClientPreferencesView";
 import Details from "./dashboard/tasks/details";
 import Executors from "./dashboard/tasks/details/Executors";
@@ -19,7 +13,6 @@ import Outputs from "./dashboard/tasks/details/Outputs";
 import Inputs from "./dashboard/tasks/details/Inputs";
 import RunTask from "./runtask";
 import RunWorkflowTask from "./runworkflowtask";
-import AboutusTemplate from "./layouts/Aboutus_template";
 import LearnMore from "./layouts/LearnMore";
 import SelectTask from "./dashboard/tasks/expriment/create";
 import Experiments from "./dashboard/tasks/expriment";
@@ -30,7 +23,7 @@ import ExperimentDetails from "./dashboard/tasks/expriment/details/ExperimentDet
 import EditExperiment from "./dashboard/tasks/expriment/edit";
 import ExportExperiment from "./dashboard/tasks/expriment/export";
 import FileBrowser from "./files/Browser";
-import FullPageSpinner from "./utils/FullPageSpinner";
+import Aboutus from "./layouts/Aboutus";
 
 const ProtectedRoutes = () => {
   const { userDetails } = useContext(UserDetailsContext);
@@ -45,9 +38,9 @@ const AppRouter = () => {
         <Route element={<Base />}>
           <Route path="/" element={<Home />} />
           <Route path="/auth" element={<Auth />} />
-          <Route path="/aboutus" element={<AboutusTemplate />} />
+          <Route path="/aboutus" element={<Aboutus />} />
           <Route path="/learnmore" element={<LearnMore />} />
-          
+
           <Route element={<ProtectedRoutes />}>
             <Route path="/logout" element={<Logout />} />
             <Route path="/dashboard" element={<Dashboard />} />
@@ -75,7 +68,7 @@ const AppRouter = () => {
             </Route>
             <Route path="/files" element={<FileBrowser mode="browser" />} />
           </Route>
-          
+
           <Route path="/*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
