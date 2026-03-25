@@ -117,7 +117,7 @@ const Aboutus = () => {
 
             <Row className="justify-content-center mt-4">
                 <Col md={6} className="text-center">
-                    <h2 className="display-6">Contact Us Placeholder</h2>
+                    <h2 className="display-6">Contact Us</h2>
                     <p className="mb-2"><FontAwesomeIcon icon={faEnvelope}/><b> Email: </b>
                         <a href="mailto:schema-services@athenarc.gr" className="text-decoration-none">
                             schema-services@athenarc.gr

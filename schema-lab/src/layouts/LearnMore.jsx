@@ -88,7 +88,7 @@ const LearnMore = () => {
                     />
                     <Image
                         src={tier2}
-                        alt='EU flag'
+                        alt='Tier2 logo'
                         style={{ width: 'auto', height: '50px' }}
                     />
                 </Row>
